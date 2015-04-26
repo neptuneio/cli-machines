@@ -18,7 +18,7 @@ source ~neptuneioagent/.bashrc
 pip install -U awscli
 
 # Generic PATH variable update for agent to pick up various CLIs
-echo "PATH=/usr/bin:/usr/local/bin:/usr/local/heroku/bin:$PATH ; export PATH" >> ~neptuneioagent/.bashrc
+echo "$PATH ; export PATH" >> ~neptuneioagent/.bashrc
 source ~neptuneioagent/.bashrc
 
 # Restart agent
