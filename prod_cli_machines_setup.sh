@@ -4,7 +4,7 @@
 PATH="/usr/bin:/usr/local/bin:/usr/local/heroku/bin:$PATH"
 
 # Install Neptuneio agent
-NEPTUNEIO_KEY="a976fc9fb8364cc99616e305486173ae" bash -c "$(curl -sS -L https://raw.githubusercontent.com/neptuneio/nagent/prod/src/install_nagent.sh)"
+NEPTUNEIO_KEY="b7bfe04856cb4388b9c93061a2f43acb" bash -c "$(curl -sS -L https://raw.githubusercontent.com/neptuneio/nagent/prod/src/install_nagent.sh)"
 
 # Give neptuneio agent sudo permissions
 echo "neptuneioagent ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
