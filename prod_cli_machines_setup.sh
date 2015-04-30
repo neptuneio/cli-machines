@@ -12,7 +12,6 @@ echo 'Defaults:neptuneioagent !requiretty' >> /etc/sudoers
 
 # Install Heroku CLI
 wget -qO- https://toolbelt.heroku.com/install.sh | sh
-source ~neptuneioagent/.bashrc
 
 # Install AWS CLI
 pip install -U awscli
