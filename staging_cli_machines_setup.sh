@@ -13,10 +13,10 @@ NEPTUNE_ENDPOINT="neptune-staging-env.herokuapp.com" NEPTUNEIO_KEY="fdf59b33c66c
 # echo 'Defaults:neptuneioagent !requiretty' >> /etc/sudoers
 
 # Install Heroku CLI
-su - $NAGENT_USER -s /bin/bash -c "wget -qO- https://toolbelt.heroku.com/install.sh | sh"
+wget -qO- https://toolbelt.heroku.com/install.sh | sh
 
 # Install AWS CLI
-su - $NAGENT_USER -s /bin/bash -c "pip install -U awscli"
+pip install -U awscli
 
 # Generic PATH variable update for agent to pick up various CLIs
 echo "PATH=$PATH ; export PATH" >> ~neptuneioagent/.bashrc
