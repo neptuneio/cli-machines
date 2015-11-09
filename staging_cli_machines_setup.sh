@@ -19,7 +19,7 @@ wget -qO- https://toolbelt.heroku.com/install.sh | sh
 pip install -U awscli
 
 # Install Softlayer CLI
-pip install -U slcli
+pip install -U softlayer
 
 # Install Digital ocean tugboat CLI
 gem install tugboat
