@@ -18,6 +18,12 @@ wget -qO- https://toolbelt.heroku.com/install.sh | sh
 # Install AWS CLI
 pip install -U awscli
 
+# Install Softlayer CLI
+pip install -U slcli
+
+# Install Digital ocean tugboat CLI
+gem install tugboat
+
 # Generic PATH variable update for agent to pick up various CLIs
 echo "PATH=$PATH ; export PATH" >> ~neptuneioagent/.bashrc
 source ~neptuneioagent/.bashrc
