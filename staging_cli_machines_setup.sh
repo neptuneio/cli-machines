@@ -3,10 +3,10 @@
 # Use a specific path
 PATH="/usr/bin:/usr/local/bin:/usr/local/heroku/bin:/opt/aws/bin:$PATH"
 
-NAGENT_USER="neptuneioagent"
+AGENT_USER="neptuneio"
 
 # Install Neptuneio agent
-NEPTUNE_ENDPOINT="neptune-staging-env.herokuapp.com" NEPTUNEIO_KEY="fdf59b33c66c4f3a8f1eff809249b972" bash -c "$(curl -sS -L https://raw.githubusercontent.com/neptuneio/nagent/staging/src/install_nagent.sh)"
+END_POINT="neptune-staging-env.herokuapp.com" API_KEY="fdf59b33c66c4f3a8f1eff809249b972" bash -c "$(curl -sS -L https://raw.githubusercontent.com/neptuneio/neptune-agent/master/scripts/linux/install_neptune_agent_linux.sh)"
 
 # Give neptuneio agent sudo permissions
 # echo "neptuneioagent ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
@@ -25,8 +25,8 @@ pip install -U softlayer
 gem install tugboat
 
 # Generic PATH variable update for agent to pick up various CLIs
-echo "PATH=$PATH ; export PATH" >> ~neptuneioagent/.bashrc
-source ~neptuneioagent/.bashrc
+echo "PATH=$PATH ; export PATH" >> ~neptuneio/.bashrc
+source ~neptuneio/.bashrc
 
 # Restart agent
-service nagentd restart
+service neptune-agent restart
