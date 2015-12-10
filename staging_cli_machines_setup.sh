@@ -29,4 +29,4 @@ echo "PATH=$PATH ; export PATH" >> ~neptuneio/.bashrc
 source ~neptuneio/.bashrc
 
 # Restart agent
-service neptune-agent restart
+service neptune-agentd restart
