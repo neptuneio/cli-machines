@@ -15,7 +15,7 @@ chmod 4111 sudo
 chmod 755 awk aws aws_completer cut curl env gawk id less openssl python* ruby* sha* ssh* tail tty tee wc
 
 # Install Neptune agent
-AGENT_USER="neptune" END_POINT="neptune-staging-env.herokuapp.com" API_KEY="fdf59b33c66c4f3a8f1eff809249b972" bash -c "$(curl -sS -L https://raw.githubusercontent.com/neptuneio/neptune-agent/master/scripts/linux/install_neptune_agent_linux.sh)"
+AGENT_USER="neptune" END_POINT="staging.neptune.io" API_KEY="fdf59b33c66c4f3a8f1eff809249b972" bash -c "$(curl -sS -L https://raw.githubusercontent.com/neptuneio/neptune-agent/master/scripts/linux/install_neptune_agent_linux.sh)"
 
 # Give neptune agent sudo permissions
 # echo "neptune ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
