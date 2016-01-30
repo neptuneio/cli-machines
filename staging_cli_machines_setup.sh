@@ -18,8 +18,8 @@ wget -qO- https://toolbelt.heroku.com/install.sh | sh
 
 # Install heroku pg plugin as agent user
 sleep 2
-su - $CLI_AGENT_USER -s /bin/bash -c "heroku update"
-su - $CLI_AGENT_USER -s /bin/bash -c "heroku plugins:install git://github.com/heroku/heroku-pg-extras.git"
+su - $CLI_AGENT_USER -s /bin/bash -c "/usr/local/heroku/bin/heroku update"
+su - $CLI_AGENT_USER -s /bin/bash -c "/usr/local/heroku/bin/heroku plugins:install git://github.com/heroku/heroku-pg-extras.git"
 
 # Upgrade pip to avoid warnings/errors
 pip install --upgrade pip
