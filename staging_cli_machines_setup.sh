@@ -33,8 +33,8 @@ pip install -U softlayer
 gem install tugboat
 
 # Generic PATH variable update for agent to pick up various CLIs
-echo "PATH=$PATH ; export PATH" >> ~neptune/.bashrc
-source ~neptune/.bashrc
+echo "PATH=$PATH ; export PATH" >> ~$CLI_AGENT_USER/.bashrc
+source ~$CLI_AGENT_USER/.bashrc
 
 # Restrict commands
 cd /bin
