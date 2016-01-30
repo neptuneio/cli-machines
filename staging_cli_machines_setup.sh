@@ -1,10 +1,12 @@
 #!/bin/bash
 
+CLI_AGENT_USER="neptune"
+
 # Use a specific path
 PATH="/usr/bin:/usr/local/bin:/usr/local/heroku/bin:/opt/aws/bin:$PATH"
 
 # Install Neptune agent
-AGENT_USER="neptune" END_POINT="staging.neptune.io" API_KEY="fdf59b33c66c4f3a8f1eff809249b972" bash -c "$(curl -sS -L https://raw.githubusercontent.com/neptuneio/neptune-agent/master/scripts/linux/install_neptune_agent_linux.sh)"
+AGENT_USER=$CLI_AGENT_USER END_POINT="staging.neptune.io" API_KEY="fdf59b33c66c4f3a8f1eff809249b972" bash -c "$(curl -sS -L https://raw.githubusercontent.com/neptuneio/neptune-agent/master/scripts/linux/install_neptune_agent_linux.sh)"
 
 # Give neptune agent sudo permissions
 # echo "neptune ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
@@ -13,10 +15,13 @@ AGENT_USER="neptune" END_POINT="staging.neptune.io" API_KEY="fdf59b33c66c4f3a8f1
 # Install Heroku CLI
 wget -qO- https://toolbelt.heroku.com/install.sh | sh
 
+# Install heroku pg plugin as agent user
 sleep 2
+su - $CLI_AGENT_USER -s /bin/bash -c "heroku update"
+su - $CLI_AGENT_USER -s /bin/bash -c "heroku plugins:install git://github.com/heroku/heroku-pg-extras.git"
 
-# Install heroku pg plugin
-heroku plugins:install git://github.com/heroku/heroku-pg-extras.git
+# Upgrade pip to avoid warnings/errors
+pip install --upgrade pip
 
 # Install AWS CLI
 pip install -U awscli
