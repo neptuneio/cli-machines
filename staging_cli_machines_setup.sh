@@ -1,7 +1,6 @@
 #!/bin/bash
 
 CLI_AGENT_USER="neptune"
-CLI_AGENT_USER_HOME=`eval echo ~$CLI_AGENT_USER`
 
 # Use a specific path
 export PATH="/usr/bin:/usr/local/bin:/usr/local/heroku/bin:/opt/aws/bin:$PATH"
@@ -37,8 +36,9 @@ pip install -U softlayer
 gem install tugboat
 
 # Generic PATH variable update for agent to pick up various CLIs
-echo "PATH=$PATH ; export PATH" >> $CLI_AGENT_USER_HOME/.bashrc
-source $CLI_AGENT_USER_HOME/.bashrc
+CLI_AGENT_USER_BASHRC=`eval echo ~$CLI_AGENT_USER/.bashrc`
+echo "PATH=$PATH ; export PATH" >> $CLI_AGENT_USER_BASHRC
+source $CLI_AGENT_USER_BASHRC
 
 # Restrict commands
 cd /bin
