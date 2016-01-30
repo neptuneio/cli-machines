@@ -13,6 +13,9 @@ AGENT_USER=$CLI_AGENT_USER END_POINT="staging.neptune.io" API_KEY="fdf59b33c66c4
 # echo "neptune ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 # echo 'Defaults:neptune !requiretty' >> /etc/sudoers
 
+# Install git
+yum install -y git
+
 # Install Heroku CLI
 wget -qO- https://toolbelt.heroku.com/install.sh | sh
 
