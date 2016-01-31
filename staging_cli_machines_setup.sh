@@ -55,7 +55,7 @@ chmod 755 date echo awk basename bash cut date echo egrep env false fgrep gawk g
 cd /usr/bin
 chmod 700 *
 chmod 4111 sudo
-chmod 755 awk aws aws_completer cut curl env gawk git* id less openssl python* ruby* sha* ssh* tail tty tee wc psql
+chmod 755 awk aws aws_completer cut curl env gawk git* id less openssl python* ruby* sha* ssh* tail tty tee wc psql*
 
 # Restart agent
 service neptune-agentd restart
