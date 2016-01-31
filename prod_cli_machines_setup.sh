@@ -12,7 +12,7 @@ export PATH="/usr/bin:/usr/local/bin:/usr/local/heroku/bin:/opt/aws/bin:$PATH"
 yum install -y git
 
 # Install postgresql for heroku pg-extras plugin
-yum install -y postgresql
+yum install -y postgresql94
 
 # Install Heroku CLI
 wget -qO- https://toolbelt.heroku.com/install.sh | sh
