@@ -11,10 +11,13 @@ export PATH="/usr/bin:/usr/local/bin:/usr/local/heroku/bin:/opt/aws/bin:$PATH"
 # Install git
 yum install -y git
 
+# Install postgresql for heroku pg-extras plugin
+yum install -y postgresql
+
 # Install Heroku CLI
 wget -qO- https://toolbelt.heroku.com/install.sh | sh
 
-# Install heroku pg plugin as agent user
+# Install heroku pg-extras plugin as agent user
 sleep 2
 su - $CLI_AGENT_USER -s /bin/bash -c "/usr/local/heroku/bin/heroku update"
 su - $CLI_AGENT_USER -s /bin/bash -c "/usr/local/heroku/bin/heroku plugins:install git://github.com/heroku/heroku-pg-extras.git"
@@ -52,7 +55,7 @@ chmod 755 date echo awk basename bash cut date echo egrep env false fgrep gawk g
 cd /usr/bin
 chmod 700 *
 chmod 4111 sudo
-chmod 755 awk aws aws_completer cut curl env gawk git* id less openssl python* ruby* sha* ssh* tail tty tee wc
+chmod 755 awk aws aws_completer cut curl env gawk git* id less openssl python* ruby* sha* ssh* tail tty tee wc psql
 
 # Restart agent
 service neptune-agentd restart
