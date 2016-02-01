@@ -23,7 +23,7 @@ su - $CLI_AGENT_USER -s /bin/bash -c "/usr/local/heroku/bin/heroku update"
 su - $CLI_AGENT_USER -s /bin/bash -c "/usr/local/heroku/bin/heroku plugins:install git://github.com/heroku/heroku-pg-extras.git"
 
 # Upgrade pip to avoid warnings/errors
-pip install -U pip
+# pip install -U pip
 
 # Install AWS CLI
 pip install -U awscli
