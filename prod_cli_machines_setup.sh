@@ -2,6 +2,9 @@
 
 CLI_AGENT_USER="neptune"
 
+# Update core packages for security
+yum -y update
+
 # Create the new user if it does not exist
 id -u $CLI_AGENT_USER &>/dev/null || useradd $CLI_AGENT_USER -m
 
