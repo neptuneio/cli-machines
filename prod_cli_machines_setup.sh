@@ -47,15 +47,15 @@ AGENT_USER=$CLI_AGENT_USER API_KEY="b7bfe04856cb4388b9c93061a2f43acb" bash -c "$
 # echo 'Defaults:neptune !requiretty' >> /etc/sudoers
 
 # Restrict commands
-cd /bin
-chmod 700 *
-chmod 4111 su
-chmod 755 date echo awk basename bash cut date echo egrep env false fgrep gawk grep mktemp more sed sh sleep sort true
+#cd /bin
+#chmod 700 *
+#chmod 4111 su
+#chmod 755 date echo awk basename bash cut date echo egrep env false fgrep gawk grep mktemp more sed sh sleep sort true
 
-cd /usr/bin
-chmod 700 *
-chmod 4111 sudo
-chmod 755 awk aws aws_completer cut curl env gawk git* id less openssl python* ruby* sha* ssh* tail tty tee wc psql*
+#cd /usr/bin
+#chmod 700 *
+#chmod 4111 sudo
+#chmod 755 awk aws aws_completer cut curl env gawk git* id less openssl python* ruby* sha* ssh* tail tty tee wc psql*
 
 # Restart agent
 service neptune-agentd restart
