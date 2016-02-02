@@ -36,6 +36,8 @@ pip install -U softlayer
 
 # Install Digital ocean tugboat CLI
 gem install tugboat
+CLI_AGENT_USER_TUGBOAT_CONFIG=`eval echo ~$CLI_AGENT_USER/.tugboat`
+curl -sS -L -o $CLI_AGENT_USER_TUGBOAT_CONFIG https://raw.githubusercontent.com/neptuneio/cli-machines/master/tugboat/.tugboat
 
 # Generic PATH variable update for agent to pick up various CLIs
 CLI_AGENT_USER_BASHRC=`eval echo ~$CLI_AGENT_USER/.bashrc`
@@ -62,4 +64,3 @@ AGENT_USER=$CLI_AGENT_USER API_KEY="b7bfe04856cb4388b9c93061a2f43acb" bash -c "$
 
 # Restart agent
 service neptune-agentd restart
-
