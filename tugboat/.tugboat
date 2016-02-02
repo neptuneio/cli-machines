@@ -1,0 +1,15 @@
+---
+authentication:
+  access_token:
+ssh:
+  ssh_user: root
+  ssh_key_path: ~/.ssh/id_rsa
+  ssh_port: '22'
+defaults:
+  region: nyc2
+  image: ubuntu-14-04-x64
+  size: 512mb
+  ssh_key: ''
+  private_networking: 'false'
+  backups_enabled: 'false'
+  ip6: 'false'
